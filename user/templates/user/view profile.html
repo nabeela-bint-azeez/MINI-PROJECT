@@ -1,0 +1,49 @@
+{% extends 'temp/user.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>view profile </title>
+</head>
+<body>
+	<h1><center>MY PROFILE</center></h1>
+	<table align="center" border="0" width="35%">
+
+        {% for i in objval2 %}
+		<tr>
+			<th>Name</th><td>{{ i.name }}</td></tr>
+			<tr><th>phone</th><td>{{ i.phone }}</td></tr>
+            <tr><th>Email</th><td>{{ i.email }}</td></tr>
+			<tr><th>Address</th><td>{{ i.address }}</td></tr>
+			<tr><th>age</th><td>{{ i.age }}</td> </tr>
+        {% endfor %}
+	</table>
+    <BR><BR><BR><BR>
+
+
+{#	<h3>ORGAN REQUEST DETAILS</h3>#}
+    <h3><center>ORGAN REQUEST DETAILS</center></h3>
+	<table align="center" border="0" width="35%">
+
+   {% for a in req %}
+		<tr><th>organ name</th><td>{{ a.request.organ_name }}</td></tr>
+        <tr><th>status</th><td>{{ a.status }}</td></tr>
+   {% endfor %}
+
+	</table>
+    <BR><BR><BR><BR>
+
+
+    <h3><center>ORGAN DONATION DETAILS</center></h3>
+	<table align="center" border="0" width="35%">
+        {% for i in don %}
+		<tr><th>organ name</th><td>{{ i.organ_name}}</td></tr>
+		<tr><th>Date of consent</th><td>{{ i.date }}</td></tr>
+        {% endfor %}
+    </table>
+
+    <BR><BR><BR><BR>
+
+</body>
+</html>
+{% endblock %}
