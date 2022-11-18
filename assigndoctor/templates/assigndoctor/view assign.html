@@ -1,0 +1,37 @@
+{% extends 'temp/doctor.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>view assign</title>
+</head>
+<body>
+<h1><center>UPDATE REQUEST STATUS </center></h1>
+	<table align="center" border="2" width="70%">
+		<tr class="btn-primary" height="50px">
+{#			<th>doctor name</th>#}
+            <th>ORGAN</th>
+
+
+
+
+	    </tr>
+        {% for i in obj %}
+
+		<tr>
+{#			<td>{{ i.doctor_id }}</td>#}
+            <td>{{ i.request.organ_name }}</td>
+        <td><a href="{% url 'avb' idd=i.assign_id  %}">available</a> </td>
+            <td><a href="{% url 'unbl' idd=i.assign_id  %}">unavailable</a> </td>
+
+		</tr>
+        {% endfor %}
+
+
+	</table>
+
+</body>
+</html>
+{% endblock %}
