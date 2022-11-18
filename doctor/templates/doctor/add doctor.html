@@ -1,0 +1,87 @@
+{#{% extends 'temp/admin.html' %}#}
+{#{% block base %}#}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>add doctor</title>#}
+{#</head>#}
+{#<body>#}
+{#	<h1><center>ADD DOCTOR</center></h1>#}
+{#	<form method="post">#}
+{#        {% csrf_token %}#}
+{#		<table align="center">#}
+{#            <tr>#}
+{#                <th>hospital</th>#}
+{#                <td><select name="dr">#}
+{#                {% for i in objval %}#}
+{#                <option value="{{ i.hospital_id }}">{{ i.hospital_name }}</option>#}
+{##}
+{#                {% endfor %}#}
+{#                </select></td>#}
+{#            </tr>#}
+{#			<tr>#}
+{#				<th>Doctor name:</th>#}
+{#				<td><input type="text" name="dname"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Specialisation:</th>#}
+{#				<td><input type="text" name="spl"></td>#}
+{#			</tr>#}
+{#            <tr>#}
+{#				<th>password:</th>#}
+{#				<td><input type="text" name="pswd"></td>#}
+{#			</tr>#}
+{##}
+{#			<tr>#}
+{#				<th></th>#}
+{#				<td><input type="submit" name="adddoc" value="ADD"></td>#}
+{#			</tr>#}
+{#			#}
+{#		</table>#}
+{#		#}
+{#	</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+
+{% extends 'temp/admin.html' %}
+{% block base %}
+ <div class="container-fluid bg-primary my-5 py-5">
+       <div class="container py-5">
+         <div class="row gx-5">
+
+             <center>
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4"> ADD DOCTOR</h1>
+                      <form method="post">
+                          {% csrf_token %}
+                            <div class="row g-3">
+
+
+                               <div class="col-12 col-sm-20">
+                                 <input type="text"  name="dname" class="form-control bg-light border-0" placeholder="Doctor name" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="hospitalname" class="form-control bg-light border-0" placeholder="Hospital name " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="spl" class="form-control bg-light border-0" placeholder="Specialisation  " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="pswd" class="form-control bg-light border-0" placeholder="Password" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+
+                                   <button class="btn btn-primary w-100 py-3" type="submit">Add doctor</button>
+                              </div>
+                           </div>
+                     </form>
+                    </div>
+                </div>
+             </center>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

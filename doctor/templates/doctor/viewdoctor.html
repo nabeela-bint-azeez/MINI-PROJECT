@@ -1,0 +1,29 @@
+{% extends 'temp/admin.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View doctor</title>
+</head>
+<body>
+	<h1><center>VIEW DOCTOR</center></h1>
+	<table align="center" border="2" width="70%">
+		<tr class="btn-primary" height="50px">
+			<th>DR Name</th>
+			<th>Specialization</th>
+            <th>hospital</th>
+		</tr>
+        {% for i in objval %}
+		<tr>
+			<td>{{ i.doctor_name }}</td>
+			<td>{{ i.specialisation  }}</td>
+            <td>{{ i.hospital_name }}</td>
+		</tr>
+        {% endfor %}
+		
+		
+	</table>
+
+</body>
+</html>
+{% endblock %}
