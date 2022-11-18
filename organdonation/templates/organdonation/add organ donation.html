@@ -1,0 +1,95 @@
+{#{% extends 'temp/user.html' %}#}
+{##}
+{#{% block base %}#}
+{##}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>add organ donation</title>#}
+{#</head>#}
+{#<body>#}
+{#	<h1><center>ADD ORGAN DONATION</center></h1>#}
+{#	<form method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{#		<table align="center">#}
+{#			<tr>#}
+{#				<th>Donor name:</th>#}
+{#				<td><input type="text" name="donorname"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Organ name:</th>#}
+{#				<td><input type="text" name="org"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Blood group:</th>#}
+{#				<td><input type="text" name="bloodgrp"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Date</th>#}
+{#				<td><input type="Date" name="date"></td>#}
+{#			</tr>#}
+{#            <tr>#}
+{#				<th>age</th>#}
+{#				<td><input type="text" name="age"></td>#}
+{#			</tr>#}
+{##}
+{##}
+{#			<tr>#}
+{#				<th></th>#}
+{#				<td><input type="submit" name="addorgan" value="ADD"></td>#}
+{#			</tr>#}
+{##}
+{#			#}
+{#		</table>#}
+{#		#}
+{#	</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+
+
+{% extends 'temp/user.html' %}
+{% block base %}
+ <div class="container-fluid bg-primary my-5 py-5">
+       <div class="container py-5">
+         <div class="row gx-5">
+
+             <center>
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">DONATE ORGAN</h1>
+                      <form method="post">
+                          {% csrf_token %}
+                            <div class="row g-3">
+
+
+                               <div class="col-12 col-sm-20">
+                                 <input type="text"  name="donorname" class="form-control bg-light border-0" placeholder="Your name" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="org" class="form-control bg-light border-0" placeholder="Organ name " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="bloodgrp" class="form-control bg-light border-0" placeholder="Blood group " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="date"  name="date" class="form-control bg-light border-0" placeholder="Date" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="age" class="form-control bg-light border-0" placeholder="Age" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+
+                                   <button class="btn btn-primary w-100 py-3" type="submit">Donate</button>
+                              </div>
+                           </div>
+                     </form>
+                    </div>
+                </div>
+             </center>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
