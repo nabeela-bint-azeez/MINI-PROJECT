@@ -1,0 +1,87 @@
+{#{% extends 'temp/user.html' %}#}
+{#{% block base %}#}
+{#<!DOCTYPE html>#}
+{#<html>#}
+{#<head>#}
+{#	<title>add organ request</title>#}
+{#</head>#}
+{#<body>#}
+{#	<h1><center>ADD ORGAN REQUEST</center></h1>#}
+{#	<form method="post">#}
+{#        {% csrf_token %}#}
+{##}
+{#		<table align="center">#}
+{#			<tr>#}
+{#				<th>Name:</th>#}
+{#				<td><input type="text" name="name"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Organ needed:</th>#}
+{#				<td><input type="text" name="organneeded"></td>#}
+{#			</tr>#}
+{#			#}
+{#			<tr>#}
+{#				<th>Blood group:</th>#}
+{#				<td><input type="text" name="bloodgrp"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Age:</th>#}
+{#				<td><input type="text" name="age"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th>Date</th>#}
+{#				<td><input type="Date" name="date"></td>#}
+{#			</tr>#}
+{#			<tr>#}
+{#				<th></th>#}
+{#				<td><input type="submit" name="addrrequest" value="ADD"></td>#}
+{#			</tr>#}
+{##}
+{#		</table>#}
+{#		#}
+{#	</form>#}
+{##}
+{#</body>#}
+{#</html>#}
+{#{% endblock %}#}
+
+{% extends 'temp/user.html' %}
+{% block base %}
+ <div class="container-fluid bg-primary my-5 py-5">
+       <div class="container py-5">
+         <div class="row gx-5">
+
+             <center>
+                <div class="col-lg-6">
+                    <div class="bg-white text-center rounded p-5">
+                        <h1 class="mb-4">REQUEST ORGAN</h1>
+                      <form method="post">
+                          {% csrf_token %}
+                            <div class="row g-3">
+
+
+                               <div class="col-12 col-sm-20">
+                                 <input type="text"  name="organneeded" class="form-control bg-light border-0" placeholder="Organ needed" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="bloodgrp" class="form-control bg-light border-0" placeholder="Blood group " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="text"  name="age" class="form-control bg-light border-0" placeholder="Age " style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+                                   <input type="date"  name="Date" class="form-control bg-light border-0" placeholder="Date" style="height: 55px; >
+                               </div>
+                              <div class="col-12 col-sm-20">
+
+                                   <button class="btn btn-primary w-100 py-3" type="submit">Request</button>
+                              </div>
+                           </div>
+                     </form>
+                    </div>
+                </div>
+             </center>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
